@@ -1,6 +1,6 @@
 ﻿Public Class ResultClass
-    Protected m_ResultList() As String
-    Protected m_NResults As Integer
+    Private m_ResultList() As String
+    Private m_NResults As Integer
 
     Public Sub New(nSz As Integer)
         m_NResults = 0
