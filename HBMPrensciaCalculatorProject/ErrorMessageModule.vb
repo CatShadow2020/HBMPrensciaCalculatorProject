@@ -1,0 +1,10 @@
+﻿Public Module ErrorMessageModule
+    Public OPERAND_IS_NOT_A_NUMBER = "Operand is not a number"
+    Public INCOMPLETE_EQUATION = "Incomplete equation"
+    Public ZERO_DIVIDE = "Zero Divide"
+    Public INTERNAL_ERROR = "Internal error"
+    Public LEFT_PARAMETERS_IS_INVALID = "Left parameters is invalid"
+    Public RIGHT_PARAMETERS_IS_INVALID = "Right parameters is invalid"
+    Public OPERATOR_IS_INVALID = "operator is invalid"
+    Public ERROR_COLON = "Error:"
+End Module

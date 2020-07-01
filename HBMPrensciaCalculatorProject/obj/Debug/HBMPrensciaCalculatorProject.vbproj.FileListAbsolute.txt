@@ -1,0 +1,10 @@
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\bin\Debug\HBMPrensciaCalculatorProject.exe.config
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\bin\Debug\HBMPrensciaCalculatorProject.exe
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\bin\Debug\HBMPrensciaCalculatorProject.pdb
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\bin\Debug\HBMPrensciaCalculatorProject.xml
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.Resources.resources
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.vbproj.GenerateResource.cache
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.vbproj.CoreCompileInputs.cache
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.exe
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.xml
+C:\Users\aakimov\source\repos\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProject\obj\Debug\HBMPrensciaCalculatorProject.pdb
