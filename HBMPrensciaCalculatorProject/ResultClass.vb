@@ -1,6 +1,6 @@
 ﻿Public Class ResultClass
     Private m_ResultList() As String
-    Private m_NResults As Integer
+    Private m_NResults As Integer ' number of elements in m_ResultList
 
     Public Sub New(nSz As Integer)
         m_NResults = 0
@@ -22,6 +22,11 @@
         Return m_ResultList(index)
     End Function
 
+    '
+    ' Store result string in the internal array
+    ' Do shift of array elements and insert new 
+    ' string into m_ResultList
+    '
     Protected Sub StoreResult(s As String)
         Dim i As Integer
         Dim nLastIndex As Integer

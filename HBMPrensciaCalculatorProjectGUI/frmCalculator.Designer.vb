@@ -22,6 +22,7 @@ Partial Class frmCalculator
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCalculator))
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -239,7 +240,7 @@ Partial Class frmCalculator
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(707, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 39)
+        Me.Label1.Size = New System.Drawing.Size(120, 38)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "History"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -269,6 +270,7 @@ Partial Class frmCalculator
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(930, 500)
         Me.MinimumSize = New System.Drawing.Size(930, 500)
         Me.Name = "frmCalculator"

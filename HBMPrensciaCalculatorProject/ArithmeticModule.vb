@@ -88,6 +88,11 @@
         Return sResult
     End Function
 
+    '
+    ' This is calculate code which used in both calculator
+    ' classes
+    '
+    '
     Public Function calculate_(left As String, right As String, oper As String) As String
         Dim resultString As String = INTERNAL_ERROR
 

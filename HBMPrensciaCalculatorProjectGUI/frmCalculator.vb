@@ -1,12 +1,13 @@
 ﻿Imports HBMPrensciaCalculatorProject
 
 Public Class frmCalculator
-    '
-    ' Insert into display digit or operator
-    '
-    '
     Dim m_Calculator As CalculatorPart2
     Dim m_Insert As Boolean
+
+    '
+    ' Insert into display operator
+    '
+    '
 
     Private Sub InsertOperatorIntoDisplay(c As String)
         Dim txt As String = DisplayTextBox.Text
@@ -25,7 +26,10 @@ Public Class frmCalculator
         InsertIntoDisplay(c)
 
     End Sub
-
+    '
+    ' Insert into display digit
+    '
+    '
     Private Sub InsertIntoDisplay(c As String)
         If m_Insert Then
             Dim txt As String = DisplayTextBox.Text
@@ -88,11 +92,13 @@ Public Class frmCalculator
 
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
         Dim txt As String = DisplayTextBox.Text
-        m_Calculator.calculate(txt)
-        txt = m_Calculator.getResult()
-        DisplayTextBox.Text = txt
-        m_Insert = False
-        UpdateHistoryListBox()
+        If txt.Length > 0 Then
+            m_Calculator.calculate(txt)
+            txt = m_Calculator.getResult()
+            DisplayTextBox.Text = txt
+            m_Insert = False
+            UpdateHistoryListBox()
+        End If
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click

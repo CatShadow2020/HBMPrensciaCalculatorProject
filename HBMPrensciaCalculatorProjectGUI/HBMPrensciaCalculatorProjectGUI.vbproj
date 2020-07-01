@@ -125,5 +125,8 @@
       <Name>HBMPrensciaCalculatorProject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Iconsmind-Outline-Calculator.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

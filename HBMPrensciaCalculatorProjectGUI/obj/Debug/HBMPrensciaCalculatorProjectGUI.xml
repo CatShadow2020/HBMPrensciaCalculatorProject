@@ -22,5 +22,10 @@ HBMPrensciaCalculatorProjectGUI
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:HBMPrensciaCalculatorProjectGUI.My.Resources.Resources.Iconsmind_Outline_Calculator">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>
