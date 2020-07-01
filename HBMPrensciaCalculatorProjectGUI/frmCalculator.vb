@@ -155,4 +155,9 @@ Public Class frmCalculator
         Next i
     End Sub
 
+    Private Sub HistoryListBox_DoubleClick(sender As Object, e As EventArgs) Handles HistoryListBox.DoubleClick
+        If IsNothing(HistoryListBox.SelectedItem) = False Then
+            DisplayTextBox.Text = HistoryListBox.SelectedItem.ToString()
+        End If
+    End Sub
 End Class
