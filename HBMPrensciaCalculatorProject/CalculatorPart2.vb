@@ -10,6 +10,54 @@ Public Class CalculatorPart2
         MyBase.New(10)
     End Sub
 
+
+    Private Function OperatorPrecedenceHelper(ByRef operatorList As List(Of String), ByRef numberList() As String) As Boolean
+        Dim aNumberList As ArrayList = New ArrayList(numberList)
+        Dim aOperatorList As ArrayList = New ArrayList(operatorList)
+        Dim left, right, oper As String
+        Dim res As String
+        Dim i As Integer
+
+        i = 0
+
+
+        While i < aOperatorList.Count
+            left = aNumberList(i)
+            right = aNumberList(i + 1)
+            oper = aOperatorList(i)
+
+            If oper = "*" Or oper = "/" Then
+                res = calculate_(left, right, oper)
+                If IsNumeric(res) = False Then
+                    StoreResult(res)
+                    Return False
+                End If
+
+                aNumberList(i) = res
+                aOperatorList.RemoveAt(i)
+                aNumberList.RemoveAt(i + 1)
+            Else
+                i += 1
+            End If
+
+
+        End While
+
+        operatorList.Clear()
+
+        For i = 0 To aOperatorList.Count - 1
+            operatorList.Add(aOperatorList(i))
+        Next i
+
+        ReDim numberList(aNumberList.Count - 1)
+        For i = 0 To aNumberList.Count - 1
+            numberList(i) = aNumberList(i)
+        Next i
+        Return True
+
+    End Function
+
+
     '
     ' Calculates equation 's' :
     ' The format of an equation is 
@@ -17,6 +65,10 @@ Public Class CalculatorPart2
     ' starting And ending with a digit. 
     '
     '
+
+
+
+
     Public Sub calculate(s As String)
         Dim sOperatorLis() As Char = {"*", "/", "+", "-"}
 
@@ -67,8 +119,10 @@ Public Class CalculatorPart2
             StoreResult(INCOMPLETE_EQUATION)
             Return
         End If
-        prevRes = numberList(0)
 
+        If OperatorPrecedenceHelper(operatorList, numberList) = False Then Return
+
+        prevRes = numberList(0)
         For i = 0 To operatorList.Count - 1
             left = prevRes
             right = numberList(i + 1)

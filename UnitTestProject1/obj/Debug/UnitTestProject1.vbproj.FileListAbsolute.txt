@@ -42,3 +42,5 @@ C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProjec
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProject1\obj\Debug\UnitTestProject1.xml
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProject1\bin\Debug\UnitTestProject1.dll.CodeAnalysisLog.xml
+C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\UnitTestProject1\bin\Debug\UnitTestProject1.dll.lastcodeanalysissucceeded

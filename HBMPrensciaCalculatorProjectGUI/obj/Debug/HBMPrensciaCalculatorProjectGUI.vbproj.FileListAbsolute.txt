@@ -32,3 +32,5 @@ C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCal
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProjectGUI\obj\Debug\HBMPrensciaCalculatorProjectGUI.exe
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProjectGUI\obj\Debug\HBMPrensciaCalculatorProjectGUI.xml
 C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProjectGUI\obj\Debug\HBMPrensciaCalculatorProjectGUI.pdb
+C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProjectGUI\bin\Debug\HBMPrensciaCalculatorProjectGUI.exe.CodeAnalysisLog.xml
+C:\Users\aakimov\source\repos\Remote\HBMPrensciaCalculatorProject\HBMPrensciaCalculatorProjectGUI\bin\Debug\HBMPrensciaCalculatorProjectGUI.exe.lastcodeanalysissucceeded
