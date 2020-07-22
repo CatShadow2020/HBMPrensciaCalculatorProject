@@ -96,7 +96,7 @@ Public Class frmCalculator
             m_Calculator.calculate(txt)
             txt = m_Calculator.getResult()
             DisplayTextBox.Text = txt
-            m_Insert = False
+            m_Insert = IsNumeric(txt)
             UpdateHistoryListBox()
         End If
     End Sub
@@ -158,6 +158,11 @@ Public Class frmCalculator
     Private Sub HistoryListBox_DoubleClick(sender As Object, e As EventArgs) Handles HistoryListBox.DoubleClick
         If IsNothing(HistoryListBox.SelectedItem) = False Then
             DisplayTextBox.Text = HistoryListBox.SelectedItem.ToString()
+            m_Insert = True
         End If
+    End Sub
+
+    Private Sub ButtonDot_Click(sender As Object, e As EventArgs) Handles ButtonDot.Click
+        InsertIntoDisplay(".")
     End Sub
 End Class

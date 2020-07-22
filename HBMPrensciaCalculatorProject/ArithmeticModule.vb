@@ -8,25 +8,25 @@
     End Function
 
     '
-    ' Convert two strings to Long array(1)
+    ' Convert two strings to Double array(1)
     ' Function does not validate arguments
     ' It need to be done before
     '
-    Private Function Parameters2Long(left As String, right As String) As Long()
-        Dim lR(1) As Long
-        lR(0) = Convert.ToUInt64(left)
-        lR(1) = Convert.ToUInt64(right)
+    Private Function Parameters2Double(left As String, right As String) As Double()
+        Dim lR(1) As Double
+        lR(0) = Convert.ToDouble(left)
+        lR(1) = Convert.ToDouble(right)
         Return lR
     End Function
 
 
     Private Function AddOperator(left As String, right As String) As String
-        Dim lResult As Long
+        Dim lResult As Double
         Dim sResult As String
-        Dim lR() As Long
+        Dim lR() As Double
 
         Try
-            lR = Parameters2Long(left, right)
+            lR = Parameters2Double(left, right)
             lResult = lR(0) + lR(1)
             sResult = Convert.ToString(lResult)
         Catch ex As Exception
@@ -38,12 +38,12 @@
     End Function
 
     Private Function SubstractOperator(left As String, right As String) As String
-        Dim lResult As Long
+        Dim lResult As Double
         Dim sResult As String
-        Dim lR() As Long
+        Dim lR() As Double
 
         Try
-            lR = Parameters2Long(left, right)
+            lR = Parameters2Double(left, right)
             lResult = lR(0) - lR(1)
             sResult = Convert.ToString(lResult)
         Catch ex As Exception
@@ -54,12 +54,12 @@
     End Function
 
     Private Function MultiplyOperator(left As String, right As String) As String
-        Dim lResult As Long
+        Dim lResult As Double
         Dim sResult As String
-        Dim lR() As Long
+        Dim lR() As Double
 
         Try
-            lR = Parameters2Long(left, right)
+            lR = Parameters2Double(left, right)
             lResult = lR(0) * lR(1)
             sResult = Convert.ToString(lResult)
         Catch ex As Exception
@@ -70,12 +70,12 @@
     End Function
 
     Private Function DivideOperator(left As String, right As String) As String
-        Dim lResult As Long
+        Dim lResult As Double
         Dim sResult As String
-        Dim lR() As Long
+        Dim lR() As Double
 
         Try
-            lR = Parameters2Long(left, right)
+            lR = Parameters2Double(left, right)
             If lR(1) = 0 Then
                 Return ZERO_DIVIDE
             End If

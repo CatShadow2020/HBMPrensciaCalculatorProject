@@ -43,6 +43,7 @@ Partial Class frmCalculator
         Me.DisplayTextBox = New System.Windows.Forms.TextBox()
         Me.HistoryListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonDot = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button7
@@ -245,11 +246,22 @@ Partial Class frmCalculator
         Me.Label1.Text = "History"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'ButtonDot
+        '
+        Me.ButtonDot.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonDot.Location = New System.Drawing.Point(424, 308)
+        Me.ButtonDot.Name = "ButtonDot"
+        Me.ButtonDot.Size = New System.Drawing.Size(75, 30)
+        Me.ButtonDot.TabIndex = 21
+        Me.ButtonDot.Text = "."
+        Me.ButtonDot.UseVisualStyleBackColor = True
+        '
         'frmCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 453)
+        Me.Controls.Add(Me.ButtonDot)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.HistoryListBox)
         Me.Controls.Add(Me.DisplayTextBox)
@@ -301,4 +313,5 @@ Partial Class frmCalculator
     Friend WithEvents DisplayTextBox As TextBox
     Friend WithEvents HistoryListBox As ListBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ButtonDot As Button
 End Class
