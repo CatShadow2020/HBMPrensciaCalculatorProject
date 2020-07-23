@@ -163,6 +163,9 @@ Public Class frmCalculator
     End Sub
 
     Private Sub ButtonDot_Click(sender As Object, e As EventArgs) Handles ButtonDot.Click
-        InsertIntoDisplay(".")
+        Dim s = DisplayTextBox.Text
+        If CheckLastNumberForDot(s) = False Then
+            InsertIntoDisplay(".")
+        End If
     End Sub
 End Class

@@ -10,6 +10,45 @@ Public Class CalculatorPart2
         MyBase.New(10)
     End Sub
 
+    Private Function OperatorSignHelper(ByRef operatorList As List(Of String), ByRef numberList() As String) As Boolean
+        Dim aNumberList As ArrayList = New ArrayList(numberList)
+        Dim aOperatorList As ArrayList = New ArrayList(operatorList)
+        Dim left, right, oper As String
+        Dim res As String
+        Dim i As Integer
+
+        i = 0
+
+
+        While i < aOperatorList.Count
+            left = aNumberList(i)
+            right = aNumberList(i + 1)
+            oper = aOperatorList(i)
+
+            If oper = "-" And left = "" Then
+                aNumberList(i) = "-" + aNumberList(i + 1)
+                aOperatorList.RemoveAt(i)
+                aNumberList.RemoveAt(i + 1)
+                Else
+                    i += 1
+            End If
+
+
+        End While
+
+        operatorList.Clear()
+
+        For i = 0 To aOperatorList.Count - 1
+            operatorList.Add(aOperatorList(i))
+        Next i
+
+        ReDim numberList(aNumberList.Count - 1)
+        For i = 0 To aNumberList.Count - 1
+            numberList(i) = aNumberList(i)
+        Next i
+        Return True
+
+    End Function
 
     Private Function OperatorPrecedenceHelper(ByRef operatorList As List(Of String), ByRef numberList() As String) As Boolean
         Dim aNumberList As ArrayList = New ArrayList(numberList)
@@ -98,14 +137,6 @@ Public Class CalculatorPart2
             Return
         End If
 
-        For i = 0 To numberList.Length - 1
-            If IsNumeric(numberList(i)) = False Then
-                StoreResult(OPERAND_IS_NOT_A_NUMBER)
-                Return
-            End If
-        Next
-
-
         If numberList.Length > 0 Then
             For i = 0 To numberList.Length - 2
                 nPos += numberList(i).Length
@@ -114,6 +145,16 @@ Public Class CalculatorPart2
                 nPos += 1
             Next
         End If
+
+        OperatorSignHelper(operatorList, numberList)
+
+        For i = 0 To numberList.Length - 1
+            If IsNumeric(numberList(i)) = False Then
+                StoreResult(OPERAND_IS_NOT_A_NUMBER)
+                Return
+            End If
+        Next
+
 
         If numberList.Length <> operatorList.Count + 1 Then
             StoreResult(INCOMPLETE_EQUATION)
