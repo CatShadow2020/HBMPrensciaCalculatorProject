@@ -168,4 +168,12 @@ Public Class frmCalculator
             InsertIntoDisplay(".")
         End If
     End Sub
+
+    Private Sub ButtonRightParenthesis_Click(sender As Object, e As EventArgs) Handles ButtonRightParenthesis.Click
+        InsertIntoDisplay(")")
+    End Sub
+
+    Private Sub ButtonLeftParenthesis_Click(sender As Object, e As EventArgs) Handles ButtonLeftParenthesis.Click
+        InsertIntoDisplay("(")
+    End Sub
 End Class

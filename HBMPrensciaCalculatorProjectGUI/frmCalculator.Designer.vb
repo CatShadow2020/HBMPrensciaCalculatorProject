@@ -44,6 +44,8 @@ Partial Class frmCalculator
         Me.HistoryListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonDot = New System.Windows.Forms.Button()
+        Me.ButtonLeftParenthesis = New System.Windows.Forms.Button()
+        Me.ButtonRightParenthesis = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button7
@@ -256,11 +258,33 @@ Partial Class frmCalculator
         Me.ButtonDot.Text = "."
         Me.ButtonDot.UseVisualStyleBackColor = True
         '
+        'ButtonLeftParenthesis
+        '
+        Me.ButtonLeftParenthesis.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLeftParenthesis.Location = New System.Drawing.Point(184, 83)
+        Me.ButtonLeftParenthesis.Name = "ButtonLeftParenthesis"
+        Me.ButtonLeftParenthesis.Size = New System.Drawing.Size(75, 30)
+        Me.ButtonLeftParenthesis.TabIndex = 22
+        Me.ButtonLeftParenthesis.Text = "("
+        Me.ButtonLeftParenthesis.UseVisualStyleBackColor = True
+        '
+        'ButtonRightParenthesis
+        '
+        Me.ButtonRightParenthesis.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRightParenthesis.Location = New System.Drawing.Point(301, 83)
+        Me.ButtonRightParenthesis.Name = "ButtonRightParenthesis"
+        Me.ButtonRightParenthesis.Size = New System.Drawing.Size(75, 30)
+        Me.ButtonRightParenthesis.TabIndex = 23
+        Me.ButtonRightParenthesis.Text = ")"
+        Me.ButtonRightParenthesis.UseVisualStyleBackColor = True
+        '
         'frmCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 453)
+        Me.Controls.Add(Me.ButtonRightParenthesis)
+        Me.Controls.Add(Me.ButtonLeftParenthesis)
         Me.Controls.Add(Me.ButtonDot)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.HistoryListBox)
@@ -314,4 +338,6 @@ Partial Class frmCalculator
     Friend WithEvents HistoryListBox As ListBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ButtonDot As Button
+    Friend WithEvents ButtonLeftParenthesis As Button
+    Friend WithEvents ButtonRightParenthesis As Button
 End Class
