@@ -61,6 +61,9 @@
         Try
             lR = Parameters2Double(left, right)
             lResult = lR(0) * lR(1)
+            If Double.IsInfinity(lResult) Then
+                Return ERROR_COLON + "Overflow"
+            End If
             sResult = Convert.ToString(lResult)
         Catch ex As Exception
             Return ERROR_COLON + ex.ToString
@@ -77,7 +80,7 @@
         Try
             lR = Parameters2Double(left, right)
             If lR(1) = 0 Then
-                Return ZERO_DIVIDE
+                Return ERROR_COLON + ZERO_DIVIDE
             End If
             lResult = lR(0) / lR(1)
             sResult = Convert.ToString(lResult)
@@ -97,17 +100,17 @@
         Dim resultString As String = INTERNAL_ERROR
 
         If IsNumeric(left) = False Then
-            resultString = LEFT_PARAMETERS_IS_INVALID
+            resultString = ERROR_COLON + LEFT_PARAMETERS_IS_INVALID
             Return resultString
         End If
 
         If IsNumeric(right) = False Then
-            resultString = RIGHT_PARAMETERS_IS_INVALID
+            resultString = ERROR_COLON + RIGHT_PARAMETERS_IS_INVALID
             Return resultString
         End If
 
         If IsValidOperator(oper) = False Then
-            resultString = OPERATOR_IS_INVALID
+            resultString = ERROR_COLON + OPERATOR_IS_INVALID
             Return resultString
         End If
 

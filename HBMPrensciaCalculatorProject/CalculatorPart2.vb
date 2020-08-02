@@ -14,6 +14,19 @@ Public Class CalculatorPart2
         Dim varDictionary As New Dictionary(Of String, ParserVariable)
         Dim sResult, ss As String
 
+        If IsNothing(s) Then
+            StoreResult(ERROR_COLON + INCOMPLETE_EQUATION)
+            Return
+        End If
+
+        s.Replace(" ", "")
+
+        If (CheckParentheses(s) = False) Then
+            StoreResult(ERROR_COLON + PARENTHESES_ARE_NOT_VALID)
+            Return
+        End If
+
+
         parser_(s, Nothing, varDictionary)
 
         Dim list As New List(Of String)(varDictionary.Keys)

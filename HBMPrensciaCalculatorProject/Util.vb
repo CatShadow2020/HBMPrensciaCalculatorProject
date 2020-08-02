@@ -13,4 +13,29 @@
         If numberList.Last.IndexOf(".") = -1 Then Return False
         Return True
     End Function
+
+    Public Function CheckParentheses(s As String) As Boolean
+        Dim nLeft, nRight As Integer
+        Dim i As Integer
+        nLeft = 0
+        nRight = 0
+
+        For i = 0 To s.Length - 1
+            If s(i) = "(" Then
+                nLeft += 1
+                Continue For
+            End If
+
+            If s(i) = ")" Then
+                nRight += 1
+                If nRight > nLeft Then Return False
+                Continue For
+            End If
+        Next
+
+        If (nLeft <> nRight) Then Return False
+
+        Return True
+
+    End Function
 End Module

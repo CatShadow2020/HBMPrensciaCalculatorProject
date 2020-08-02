@@ -44,44 +44,38 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         myCalc.SetOperator("/")
         myCalc.calculate()
         s = myCalc.getResult()
-        Assert.AreEqual(s, ZERO_DIVIDE)
+        Assert.AreEqual(s, ERROR_COLON + ZERO_DIVIDE)
 
         myCalc.SetLeft("")
         myCalc.SetRight("423")
         myCalc.SetOperator("+")
         myCalc.calculate()
         s = myCalc.getResult()
-        Assert.AreEqual(s, LEFT_PARAMETERS_IS_INVALID)
+        Assert.AreEqual(s, ERROR_COLON + LEFT_PARAMETERS_IS_INVALID)
 
         myCalc.SetLeft("foo")
         myCalc.SetRight("423")
         myCalc.SetOperator("+")
         myCalc.calculate()
         s = myCalc.getResult()
-        Assert.AreEqual(s, LEFT_PARAMETERS_IS_INVALID)
+        Assert.AreEqual(s, ERROR_COLON + LEFT_PARAMETERS_IS_INVALID)
 
         myCalc.SetLeft("1")
         myCalc.SetRight(Nothing)
         myCalc.SetOperator("+")
         myCalc.calculate()
         s = myCalc.getResult()
-        Assert.AreEqual(s, RIGHT_PARAMETERS_IS_INVALID)
+        Assert.AreEqual(s, ERROR_COLON + RIGHT_PARAMETERS_IS_INVALID)
 
-        myCalc.SetLeft("9223372036854775807")
-        myCalc.SetRight("1")
-        myCalc.SetOperator("+")
-        myCalc.calculate()
-        s = myCalc.getResult()
-
-        Assert.IsTrue(s.IndexOf(ERROR_COLON) = 0)
-
-        myCalc.SetLeft("9223372036854775807")
-        myCalc.SetRight("2")
+        myCalc.SetLeft("1.7976931348623157E+308")
+        myCalc.SetRight("100")
         myCalc.SetOperator("*")
         myCalc.calculate()
         s = myCalc.getResult()
 
         Assert.IsTrue(s.IndexOf(ERROR_COLON) = 0)
+
+
     End Sub
 
     <TestMethod()> Public Sub TestMethod2()
@@ -90,7 +84,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         myCalc2.calculate("1+1+1+1+1+1+1+!+1+1")
         s = myCalc2.getResult()
-        Assert.AreEqual(s, OPERAND_IS_NOT_A_NUMBER)
+        Assert.AreEqual(s, ERROR_COLON + OPERAND_IS_NOT_A_NUMBER)
 
         myCalc2.calculate("1*2+4-500")
         s = myCalc2.getResult()
@@ -98,23 +92,23 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         myCalc2.calculate("")
         s = myCalc2.getResult()
-        Assert.AreEqual(s, INCOMPLETE_EQUATION)
+        Assert.AreEqual(s, ERROR_COLON + INCOMPLETE_EQUATION)
 
         myCalc2.calculate(Nothing)
         s = myCalc2.getResult()
-        Assert.AreEqual(s, INCOMPLETE_EQUATION)
+        Assert.AreEqual(s, ERROR_COLON + INCOMPLETE_EQUATION)
 
         myCalc2.calculate("1+")
         s = myCalc2.getResult()
-        Assert.AreEqual(s, OPERAND_IS_NOT_A_NUMBER)
+        Assert.AreEqual(s, ERROR_COLON + OPERAND_IS_NOT_A_NUMBER)
 
-        myCalc2.calculate("1+9223372036854775807")
+        myCalc2.calculate("100*1.7976931348623157E+308")
         s = myCalc2.getResult()
         Assert.IsTrue(s.IndexOf(ERROR_COLON) = 0)
 
         myCalc2.calculate("1/0")
         s = myCalc2.getResult()
-        Assert.AreEqual(s, ZERO_DIVIDE)
+        Assert.AreEqual(s, ERROR_COLON + ZERO_DIVIDE)
 
         For i = 0 To 11
             myCalc2.calculate("1+" + i)
