@@ -178,7 +178,7 @@ Public Class CalculatorPart2
             Return ERROR_COLON + INCOMPLETE_EQUATION
         End If
 
-        numberList = s.Split(sOperatorLis)
+        numberList = SplitCalculatorString(s)
 
         If (numberList.Length = 1) Then
             'StoreResult(numberList(0))

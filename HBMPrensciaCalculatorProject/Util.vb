@@ -1,8 +1,35 @@
 ﻿Public Module Util
     Public Function SplitCalculatorString(s As String) As String()
-        Dim sOperatorLis() As Char = {"*", "/", "+", "-"}
-        Dim numberList() As String
-        numberList = s.Split(sOperatorLis)
+        Dim sOperatorList() As Char = {"*", "/", "+", "-"}
+        Dim sArr As ArrayList = New ArrayList
+        Dim i, j As Integer
+        Dim nParamIndex As Integer = 0
+        Dim sTmp, sPrev As String
+
+        sPrev = ""
+        sArr.Add("")
+
+        For i = 0 To s.Length - 1
+
+            sTmp = s(i)
+            If sOperatorList.Contains(sTmp) Then
+                If sPrev = "E" Or sPrev = "e" Then ' check for exponential format
+                    sArr(nParamIndex) += sTmp
+                Else
+                    nParamIndex += 1
+                    sArr.Add("")
+                End If
+            Else
+                sArr(nParamIndex) += sTmp
+            End If
+            sPrev = sTmp
+        Next
+
+        Dim numberList(sArr.Count - 1) As String
+        For i = 0 To sArr.Count - 1
+            numberList(i) = sArr(i).ToString
+        Next
+
         Return numberList
     End Function
 

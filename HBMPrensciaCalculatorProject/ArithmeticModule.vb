@@ -83,7 +83,7 @@
                 Return ERROR_COLON + ZERO_DIVIDE
             End If
             lResult = lR(0) / lR(1)
-            sResult = Convert.ToString(lResult)
+            sResult = lResult.ToString()
         Catch ex As Exception
             Return ERROR_COLON + ex.ToString
         End Try
